@@ -113,12 +113,12 @@ find_last_0(std::list<int> &l)
 //! Given a vector that has ten elements, copy the elements from positions
 //! 3 through 7 in reverse order to a list.
 inline void
-vec2list_3_7_reverse(const std::vector<int> &v, std::list<int> &l)
+vec2list_3_7_reverse(const std::vector<int> &v,std::list<int> &l)
 {
     //!     1 2 3 4 5 6 7 8 9 10
     //!    ^                  ^^
     //! rend                  rbegin
-    std::copy(v.crbegin() + 3, v.crbegin() + 8, std::back_inserter(l));
+    std::copy(v.crend() - 8, v.crend() - 3,std::back_inserter(l));
     //!                                  ^
     //! @note: std::copy copies the range [first,last) into result.
     //!        hence, the arguments here denote:
